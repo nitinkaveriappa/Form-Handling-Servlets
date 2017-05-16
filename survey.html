@@ -1,0 +1,141 @@
+<!--Nitin Kaveriappa Udiyanda Muthanna G01000006 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="Homework 1">
+	<meta name="author" content="Nitin Kaveriappa Udiyanda Muthanna">
+	<title>SWE642 HW2</title>
+	<link href="css/hw.css" rel="stylesheet" type="text/css">
+	<link href="css/jquery-ui.css" rel="stylesheet">
+	<script src="js/script.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script>
+	window.onload = usrGreet();
+	$( function() {
+			 $( "#tooltip" ).tooltip();
+		 } );
+	</script>
+</head>
+<body>
+	<div class="container">
+	<header>
+	<h1>SWE-642 Assignment</h1>
+	<h1>Computer Science Department Survey</h1>
+	</header>
+	<hr>
+	<a href="index.html">Main Page</a>
+	&nbsp;
+	<a href="home.html">CS Dept. Homepage</a>
+	<div style="color:blue;text-decoration:underline;display:inline;cursor:pointer;float:right" onclick="callRenewSet()">Change User</div>
+	<hr>
+	<div class="main">
+	<div class="form">
+		<form id="form" action="./SubmitServlet" method="post">
+		<table>
+		<tr>
+		<td>Student ID:</td></tr><tr>
+		<td><input type="text" id="studentid" name="studentid" placeholder="Student ID" required autofocus></td>
+		</tr><tr>
+		<td>Name:</td></tr><tr>
+		<td><input type="text" id="name" name="name" placeholder="Name" autocomplete="on" required></td>
+		</tr><tr>
+		<td>Street Address:</td></tr><tr>
+		<td><input type="text" id="streetaddress" name="streetaddress" placeholder="Street Address" autocomplete="on" required></td>
+		</tr><tr>
+		<td>City:</td></tr><tr>
+		<td><input type="text" id="city" name="city" placeholder="City" autocomplete="on" required></td>
+		</tr><tr>
+		<td>State:</td></tr><tr>
+		<td><input type="text" id="state" name="state" placeholder="State" autocomplete="on" required></td>
+		</tr><tr>
+		<td>Zip:</td></tr><tr>
+		<td><input type="text" id="zip" name="zip" placeholder="Zip" autocomplete="on" onblur="checkZip(this.value)" required></td>
+		</tr><tr>
+		<td>Telephone Number:</td></tr><tr>
+		<td><input type="text" id="telephonenumber" name="telephonenumber" placeholder="(XXX)XXX-XXXX" autocomplete="on" required></td>
+		</tr><tr>
+		<td>E-mail:</td></tr><tr>
+		<td><input type="email" id="email" name="email" placeholder="johndoe@gmail.com" autocomplete="on" required></td>
+		</tr><tr>
+		<td>URL:</td></tr><tr>
+		<td><input type="url" id="url" name="url" placeholder="http://website.com" autocomplete="on" required></td>
+		</tr><tr>
+		<td>Date of Survey:</td></tr><tr>
+		<td><input type="date" id="dateofsurvey" name="dateofsurvey" placeholder="MM/DD/YYYY" required></td>
+		</tr>
+		<tr>
+		<td>What did you like most about the campus?<br><i>(Check one or more)</i></td></tr><tr>
+		<td>
+		<input type="checkbox" name="like" value="students">Students
+		<input type="checkbox" name="like" value="location">Location<br>
+		<input type="checkbox" name="like" value="campus">Campus
+		<input type="checkbox" name="like" value="atmosphere">Atmosphere<br>
+		<input type="checkbox" name="like" value="dormrooms">Dorm Rooms
+		<input type="checkbox" name="like" value="sports">Sports<br>
+		</td>
+		</tr>
+		<tr>
+		<td>How did you become interested in the university?<br><i>(Check one)</i></td></tr><tr>
+		<td>
+		<input type="radio" name="interest" value="friends">Friends
+		<input type="radio" name="interest" value="television">Television<br>
+		<input type="radio" name="interest" value="internet">Internet
+		<input type="radio" name="interest" value="other">Other<br>
+		</td>
+		</tr>
+		<tr>
+		<td>Additional Comments:</td></tr><tr>
+		<td><textarea name="comments" cols="40" rows="5" placeholder="Additional Comments"></textarea></td>
+		</tr>
+		<tr>
+		<td>High-school graduation month:<br></td></tr><tr>
+		<td><input list="month" placeholder="Month">
+		<datalist id="month">
+			<option value="January">
+			<option value="February">
+			<option value="March">
+			<option value="April">
+			<option value="May">
+			<option value="June">
+			<option value="July">
+			<option value="August">
+			<option value="September">
+			<option value="October">
+			<option value="November">
+			<option value="December">
+		</datalist>
+		<input type="text" name="year" placeholder="Year-YYYY"></td>
+		</tr>
+		<tr>
+		<td>How likely are you going to recommend this<br>school to other prospective students?</td></tr><tr>
+		<td><select name="recommend">
+		<option value="verylikely">Very Likely</option>
+		<option value="likely">Likely</option>
+		<option value="unlikely">Unlikely</option>
+		</select></td>
+		</tr>
+		<tr>
+			<td>Data:</td></tr><tr>
+			<td><input type="text" name="data" placeholder="1,2,3,4,5,6,7,8,9,10"  required></td>
+		</tr>
+		<tr>
+		<td>
+			<input type="reset" name="reset" value="Reset"/>
+			<input type="submit" value="Submit" onclick="return formValidate()">
+		</td>
+		</tr>
+		</table>
+		</form>
+	</div>
+	</div>
+	<div class="err" style="display:none"></div>
+	<hr>
+	<footer>&copy; 2017 Nitin Kaveriappa</footer>
+	</div>
+</body>
+<div class="logo" id="tooltip">
+  	<a href="https://www2.gmu.edu/" title="Please visit http://www.gmu.edu for more information." target="_blank"><img src="images/logo.jpg" alt="Mason Logo" style="width:250px;height:175px;"></a>
+</div>
+</html>

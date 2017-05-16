@@ -1,0 +1,50 @@
+/*Nitin Kaveriappa Udiyanda Muthanna G01000006*/
+.container {
+	margin-right: 17%;
+	margin-left: 17%;
+}
+
+.form {
+	-webkit-column-count:3;
+	column-count:3;
+	-webkit-column-gap:30px;
+	column-gap:30px;
+	-webkit-column-rule:1px outset black;
+	column-rule:1px outset black;
+}
+.main {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.main td {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.logo {
+	position:relative;
+	float:right;
+}
+
+header, footer{
+	padding: 5px;
+	background-color: green;
+	color: white;
+	text-align: center;
+}
+
+footer {
+	text-align: right;
+}
+
+body {
+	background-color: lightgrey;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+h1 {
+	color: blue;
+    text-shadow: 2px 2px 4px #000000;
+}
